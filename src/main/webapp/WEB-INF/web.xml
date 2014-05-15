@@ -17,4 +17,12 @@
         <url-pattern>soccerleague</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>registeredPlayer</servlet-name>
+        <servlet-class>com.patmullins.soccerleague.SoccerLeague</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registeredPlayer</servlet-name>
+        <url-pattern>registeredplayer</url-pattern>
+    </servlet-mapping>
 </web-app>     
