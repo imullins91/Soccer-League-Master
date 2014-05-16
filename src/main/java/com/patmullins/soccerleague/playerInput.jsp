@@ -2,7 +2,7 @@
 <body>
 <CENTER>
     <H1>Player Information</H1>
-    <form  method="get" action="/registeredplayer">
+    <form  method="post" action="Player">
         Your name:
         <INPUT TYPE="text" NAME="name">
         <BR>

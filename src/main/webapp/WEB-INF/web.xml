@@ -5,24 +5,15 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
 
-    <display-name>Soccer League</display-name>
+    <display-name>Player</display-name>
 
     <servlet>
-        <servlet-name>SoccerLeague</servlet-name>
+        <servlet-name>Player</servlet-name>
         <servlet-class>com.patmullins.soccerleague.SoccerLeague</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>SoccerLeague</servlet-name>
-        <url-pattern>soccerleague</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>registeredPlayer</servlet-name>
-        <servlet-class>com.patmullins.soccerleague.SoccerLeague</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>registeredPlayer</servlet-name>
-        <url-pattern>registeredplayer</url-pattern>
+        <servlet-name>Player</servlet-name>
+        <url-pattern>/Player</url-pattern>
     </servlet-mapping>
 </web-app>     
