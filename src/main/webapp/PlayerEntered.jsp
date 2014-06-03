@@ -1,4 +1,4 @@
-package com.patmullins.soccerleague;
+
 
 <jsp:useBean id="user" class="com.patmullins.soccerleague.Player" scope="session"/>
 <HTML>

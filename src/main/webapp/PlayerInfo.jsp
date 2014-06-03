@@ -1,10 +1,9 @@
-package com.patmullins.soccerleague;
 
 <html>
 <body>
 <CENTER>
     <H1>Player Information</H1>
-    <form  method="post" action="InfoSave.jsp">
+    <form  method="get" action="../java/com/patmullins/soccerleague/PlayerServlet.java">
         Your name:
         <INPUT TYPE="text" NAME="name">
         <BR>
