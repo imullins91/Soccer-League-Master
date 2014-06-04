@@ -3,7 +3,7 @@
 <body>
 <CENTER>
     <H1>Player Information</H1>
-    <form  method="get" action="../java/com/patmullins/soccerleague/PlayerServlet.java">
+    <form  method="get" action="/PlayerServlet">
         Your name:
         <INPUT TYPE="text" NAME="name">
         <BR>
