@@ -1,16 +1,22 @@
 
 
-<%@ page import="com.patmullins.soccerleague.PlayerServlet" %>
+
+<%@ page import="com.patmullins.soccerleague.Player" %>
 <HTML>
 <BODY>
-<%
-    PlayerServlet viewModel = (PlayerServlet) request.getAttribute("playerServlet");
-    pageContext.setAttribute("player", player);
-%>%>
 
-You entered<BR>
-Player Name: <%= user.getName() %><BR>
-Player Position: <%= user.getPosition() %><BR>
-Jersey Number: <%= user.getJersey() %><BR>
+<%
+    String message = (String) request.getAttribute("message");
+    out.println("Servlet communicated message to JSP: "+ message);
+
+    Player vecObj = (Player) request.getAttribute("name");
+    out.println("Servlet to JSP communication of an object: "+vecObj.get(0));
+%>
+
+<%--You entered<BR>
+Player Name: <%= Player.getName() %><BR>
+Player Position: <%= Player.getPosition() %><BR>
+Jersey Number: <%= Player.getJersey() %><BR>
+--%>
 </BODY>
 </HTML>

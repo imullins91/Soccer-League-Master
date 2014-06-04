@@ -11,12 +11,15 @@ public class PlayerServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Player p = new Player();
-        p.setName( request.getParameter("name"));
-        p.setPosition( request.getParameter("position"));
+        Player vecObj = new Player();
+        vecObj.add("Servlet to JSP communicating an object");
+        request.setAttribute("name",vecObj);
 
 
-        getServletConfig().getServletContext().getRequestDispatcher("/PlayerEntered.jsp").forward(request, response);
+        RequestDispatcher reqDispatcher = getServletConfig().getServletContext().getRequestDispatcher("/PlayerEntered.jsp");
+        reqDispatcher.forward(request,response);
+
+
 
     }
 
