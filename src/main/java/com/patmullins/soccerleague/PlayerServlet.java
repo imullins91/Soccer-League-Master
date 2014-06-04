@@ -13,15 +13,10 @@ public class PlayerServlet extends HttpServlet {
 
         Player p = new Player();
         p.setName( request.getParameter("name"));
+        p.setPosition( request.getParameter("position"));
 
-        response.getWriter().close();
-    }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("POST Pat Mullins");
-
-        response.getWriter().println("Jsp is linked with a post");
-        response.getWriter().close();
+        getServletConfig().getServletContext().getRequestDispatcher("/PlayerEntered.jsp").forward(request, response);
 
     }
 
