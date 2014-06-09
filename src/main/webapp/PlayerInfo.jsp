@@ -3,7 +3,7 @@
 <body>
 <CENTER>
     <H1>Player Information</H1>
-    <form  method="Post" action="/PlayerEntered.jsp">
+    <form  method="get" action="/PlayerServlet">
         Your name:
         <INPUT TYPE="text" NAME="name">
         <BR>

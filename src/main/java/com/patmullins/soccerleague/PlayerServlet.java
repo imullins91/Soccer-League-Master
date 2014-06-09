@@ -1,44 +1,26 @@
 package com.patmullins.soccerleague;
 
-import javax.servlet.http.HttpServlet;
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
+        import javax.servlet.ServletException;
+        import javax.servlet.http.HttpServlet;
+        import javax.servlet.http.HttpServletRequest;
+        import javax.servlet.http.HttpServletResponse;
+        import java.io.IOException;
 
 public class PlayerServlet extends HttpServlet {
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        Player vecObj = new Player();
+        vecObj.add("Servlet to JSP communicating an object");
+        request.setAttribute("name",vecObj);
+
+
+        RequestDispatcher reqDispatcher = getServletConfig().getServletContext().getRequestDispatcher("/PlayerEntered.jsp");
+        reqDispatcher.forward(request,response);
 
 
 
-        String name = HttpServletRequest.getParameter("name");
-        String position = HttpServletRequest.getParameter("position");
-        String jersey = HttpServletRequest.getParameter("jersey");
-
-        request.setAttribute("name", name);
-        request.setAttribute("position", position);
-        request.setAttribute("jersey", jersey);
-
-        RequestDispacher rd = request.getRequestDispacher("/PlayerInfo.jsp");
-        rd.forward(request,response);
     }
+
 }
-
-
-
-
-
-            // Player P = new Player();
-            // request.setAttribute("name",P);
-
-            // String name= request.getParameter("name");
-            // String position= request.getParameter("position");
-
-            // request.setAttribute("name", name);
-            // request.setAttribute("position", position);
-
-
-
-
