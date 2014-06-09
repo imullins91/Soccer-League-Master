@@ -1,22 +1,11 @@
-
-
-
-<%@ page import="com.patmullins.soccerleague.Player" %>
 <HTML>
 <BODY>
+<jsp:useBean id="PlayerServlet" class="com.patmullins.soccerleague.PlayerServlet" scope="session"/>
 
-<%
-    String message = (String) request.getAttribute("message");
-    out.println("Servlet communicated message to JSP: "+ message);
+You entered<BR>
+Player Name: <%= com.patmullins.soccerleague.PlayerServlet.getName() %><BR>
+Player Position: <%= com.patmullins.soccerleague.PlayerServlet.getPosition() %><BR>
+Jersey Number: <%= com.patmullins.soccerleague.PlayerServlet.getJersey() %><BR>
 
-    Player vecObj = (Player) request.getAttribute("name");
-    out.println("Servlet to JSP communication of an object: "+vecObj.get(0));
-%>
-
-<%--You entered<BR>
-Player Name: <%= Player.getName() %><BR>
-Player Position: <%= Player.getPosition() %><BR>
-Jersey Number: <%= Player.getJersey() %><BR>
---%>
 </BODY>
 </HTML>
