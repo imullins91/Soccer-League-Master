@@ -1,23 +1,16 @@
-
-<html>
-<body>
-<CENTER>
-    <H1>Player Information</H1>
-    <form  method="get" action="/PlayerServlet">
-        Your name:
-        <INPUT TYPE="text" NAME="name">
-        <BR>
-        <BR>
-        Jersey Number:
-        <INPUT TYPE="text" NAME="jersey">
-        <BR>
-        Preferred Position:
-        <INPUT TYPE="text" NAME="position">
-        <BR>
-        <BR>
-        <INPUT TYPE="submit" VALUE="Submit"><INPUT TYPE="RESET" VALUE="Reset">
-    </FORM>
-</CENTER>
-</form>
-</body>
-</html>
+<HTML>
+<HEAD> <TITLE> Des Moines Soccer League  </TITLE> </HEAD>
+<BODY>
+<h1><center>Welcome to the DSM Soccer League Main Page</center></h1>
+<p><center>Please enter your information below</center></p>
+<form action="/PlayerServlet">
+        <center>
+        <br><b>First Name:</b><input type="text" name="firstName"/></br>
+        <br><b>Last Name:</b><input type="text" name="lastName"/></br>
+        <br><b>Preferred Position:</b><input type="text" name="position"/></br>
+        <br><b>Jersey No:</b><input type="int" name="jersey"/></br>
+        <input type="submit" value="submit">
+        </center>
+    </form>
+</BODY>
+</HTML>

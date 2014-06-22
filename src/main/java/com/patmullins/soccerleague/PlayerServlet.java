@@ -1,26 +1,23 @@
 package com.patmullins.soccerleague;
 
-
-        import javax.servlet.ServletException;
-        import javax.servlet.http.HttpServlet;
-        import javax.servlet.http.HttpServletRequest;
-        import javax.servlet.http.HttpServletResponse;
-        import java.io.IOException;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class PlayerServlet extends HttpServlet {
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        Player vecObj = new Player();
-        vecObj.add("Servlet to JSP communicating an object");
-        request.setAttribute("name",vecObj);
-
-
-        RequestDispatcher reqDispatcher = getServletConfig().getServletContext().getRequestDispatcher("/PlayerEntered.jsp");
-        reqDispatcher.forward(request,response);
-
-
-
+    public static void main(String [] args) {
+        System.out.println("Here is the information you entered");
     }
+    public void doGet(HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException {
 
+        PrintWriter out = response.getWriter();
+        out.println("<h1>DSM Soccer League Information: </h1>");
+        out.println("<b><BR>Player has entered: </b>");
+        out.println("<BR>First Name: " + request.getParameter("firstName"));
+        out.println("<BR>Last Name: " + request.getParameter("lastName"));
+        out.println("<BR>Preferred Position: " + request.getParameter("position"));
+        out.println("<BR>Jersey No: " + request.getParameter("jersey"));
+    }
 }
