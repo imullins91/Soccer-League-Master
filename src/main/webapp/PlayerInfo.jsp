@@ -5,10 +5,10 @@
 <p><center>Please enter your information below</center></p>
 <form method="get" action="/PlayerServlet">
         <center>
-        <br><b>First Name:</b><input type="text" name="name"/></br>
+        <br><b>First Name:</b><input type="text" name="firstName"/></br>
         <br><b>Last Name:</b><input type="text" name="lastName"/></br>
         <br><b>Preferred Position:</b><input type="text" name="position"/></br>
-        <br><b>Jersey No:</b><input type="int" name="jersey"/></br>
+        <br><b>Jersey No:</b><input type="int" name="jerseyNo"/></br>
         <input type="submit" value="submit">
         </center>
     </form>

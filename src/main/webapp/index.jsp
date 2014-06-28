@@ -4,8 +4,18 @@
 <html>
 <body>
 <%
-String name = (String) request.getAttribute("messi");
-out.println("Supposed to spit out name of player but wont: "+ name);
+
+String firstName = (String) request.getParameter("firstName");
+out.println("<br>Your first name is:" + firstName + "</br>");
+
+String lastName = (String) request.getParameter("lastName");
+out.println("<br>Your last name is:" + lastName + "</br>");
+
+String position = (String) request.getParameter("position");
+out.println("<br>The position you selected is:" + position + "</br>");
+
+String jerseyNo = (String) request.getParameter("jerseyNo");
+out.println("<br>Your jersey Number is: " + jerseyNo + "</br>");
 %>
 </body>
 </html>

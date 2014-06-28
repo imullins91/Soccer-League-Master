@@ -15,15 +15,15 @@ public class PlayerServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String name = "Example source code of Servlet to JSP communication.";
+//        String name = "name";
 
-        request.setAttribute("messi", name);
+//        request.setAttribute("messi", name);
 
-        Player messi = new Player();
+//        Player messi = new Player();
 
-        messi.getName();
+//        messi.getName();
 
-        request.setAttribute("messi", name);
+//        request.setAttribute("messi", name);
 
         RequestDispatcher reqDispatcher = getServletConfig().getServletContext().getRequestDispatcher("/index.jsp");
 
