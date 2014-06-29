@@ -1,7 +1,6 @@
 package com.patmullins.soccerleague;
 
 import java.io.IOException;
-import java.util.Vector;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,19 +14,16 @@ public class PlayerServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        String name = "name";
+        String firstName = request.getParameter("firstName");
 
-//        request.setAttribute("messi", name);
+        Player messi = new Player();
 
-//        Player messi = new Player();
+        messi.setName(firstName);
 
-//        messi.getName();
+        request.setAttribute("Messi", messi);
 
-//        request.setAttribute("messi", name);
-
-        RequestDispatcher reqDispatcher = getServletConfig().getServletContext().getRequestDispatcher("/index.jsp");
-
-        reqDispatcher.forward(request,response);
+        RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
+        view.forward(request,response);
 
     }
 }
