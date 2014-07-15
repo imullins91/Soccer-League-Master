@@ -1,29 +1,35 @@
+
 package com.patmullins.soccerleague;
 
-import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
+import java.io.IOException;
 
 
 public class PlayerServlet extends HttpServlet {
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response) throws ServletException, IOException {
 
-        String firstName = request.getParameter("firstName");
+        Player player = new Player();
 
-        Player messi = new Player();
+        player.setName(request.getParameter("Name"));
+        request.setAttribute("playerName", player.getName());
 
-        messi.setName(firstName);
+        player.setPosition(request.getParameter("Position"));
+        request.setAttribute("playerPosition", player.getPosition());
 
-        request.setAttribute("Messi", messi);
+        player.setCountry(request.getParameter("Country"));
+        request.setAttribute("playerCountry", player.getCountry());
 
-        RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
-        view.forward(request,response);
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
+        rd.forward(request, response);
 
     }
 }
+
+
+
