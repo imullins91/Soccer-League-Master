@@ -11,25 +11,19 @@ import java.io.IOException;
 
 public class PlayerServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Player player = new Player();
 
-        player.setName(request.getParameter("Name"));
-        request.setAttribute("playerName", player.getName());
+        Player messi = new Player();
+        messi.setName(request.getParameter("name"));
+        messi.setPosition(request.getParameter("position"));
+        messi.setCountry(request.getParameter("country"));
 
-        player.setPosition(request.getParameter("Position"));
-        request.setAttribute("playerPosition", player.getPosition());
+        request.setAttribute("messi", messi);
 
-        player.setCountry(request.getParameter("Country"));
-        request.setAttribute("playerCountry", player.getCountry());
-
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
-        rd.forward(request, response);
+        RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
+        view.forward(request, response);
 
     }
+
 }
-
-
-
