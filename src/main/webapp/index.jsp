@@ -3,7 +3,6 @@
 
 
 <html>
-<<<<<<< HEAD
 <head><LINK REL="stylesheet" HREF="layout.css" TYPE="text/css"></head>
 
 <h2>You have successfully completed the registration</h2>
@@ -24,19 +23,4 @@
 </p>
 
 </body>
-=======
-<body>
-<h3>You have successfully completed the registration</h3>
 
-<%
-    Player messi = (Player) request.getAttribute("messi");
-%>
-Name: <%= messi.getName()%><br>
-Position: <%= messi.getPosition()%> <br>
-Country: <%= messi.getCountry()%>
-</body>
-
-</html>
->>>>>>> 7667d496d254527ad0a97db36fa65d8c1062df4e
-
-</html>
