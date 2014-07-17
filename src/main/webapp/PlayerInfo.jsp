@@ -1,4 +1,5 @@
 <HTML>
+<<<<<<< HEAD
 
 <HEAD><LINK REL="stylesheet" HREF="layout.css" TYPE="text/css"></HEAD>
     <TITLE> Des Moines Soccer League </TITLE>
@@ -8,6 +9,15 @@
 </h1>
 <p>
 Please enter your information below
+=======
+<HEAD><TITLE> Des Moines Soccer League </TITLE></HEAD>
+<BODY>
+<h1>
+    <center>Des Moines Soccer League</center>
+</h1>
+<p>
+<center>Please enter your information below</center>
+>>>>>>> 7667d496d254527ad0a97db36fa65d8c1062df4e
 </p>
 <form method="post" action="/PlayerServlet">
 
