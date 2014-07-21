@@ -1,4 +1,5 @@
 <HTML>
+
 <HEAD><LINK REL="stylesheet" HREF="layout.css" TYPE="text/css"></HEAD>
     <TITLE> Des Moines Soccer League </TITLE>
 <BODY>
@@ -7,21 +8,16 @@
 </h1>
 <p>
 Please enter your information below
-<HEAD><TITLE> Des Moines Soccer League </TITLE></HEAD>
-<BODY>
-<h1>
-    <center>Des Moines Soccer League</center>
-</h1>
-<p>
-<center>Please enter your information below</center>
 </p>
 <form method="post" action="/PlayerServlet">
 
     <center>
-        <br><b>Enter your Name:</b><input type="text" id="name" name="name"/></br>
-        <br><b>Preferred Position:</b><input type="text" id="position" name="position"/></br>
-        <br><b>Country of Origin:</b><input type="text" id="country" name="country"/></br>
-        <input type="submit" value="submit">
+        <label for="firstName">First Name:</label><input type="text" id="firstName" name="firstName"/>
+        <label for="lastName">Last Name:</label><input type="text" id="lastName" name="lastName"/><br>
+        <label for="position">Position:</label><input type="text" id="position" name="position"/><br>
+        <label for="jersey">Jersey No:</label><input type="number" id="jersey" name="jersey" min="0" max="99"/><br>
+        <label for="country">Country:</label><select id="country" name="country"><option></option><option>USA</option><option>Mexico</option></select><br>
+        <input type="submit" value="Submit">
     </center>
 </form>
 </BODY>

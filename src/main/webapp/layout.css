@@ -27,3 +27,7 @@ table.center{
 td {
     text-align: center;
 }
+
+label {
+    font-weight:bold;
+}

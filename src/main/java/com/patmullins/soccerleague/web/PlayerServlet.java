@@ -1,5 +1,7 @@
 
-package com.patmullins.soccerleague;
+package com.patmullins.soccerleague.web;
+
+import com.patmullins.soccerleague.domain.Player;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,12 +15,12 @@ public class PlayerServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-
         Player playerEntry = new Player();
-        playerEntry.setName(request.getParameter("name"));
+        playerEntry.setFirstName(request.getParameter("firstName"));
+        playerEntry.setLastName(request.getParameter("lastName"));
         playerEntry.setPosition(request.getParameter("position"));
         playerEntry.setCountry(request.getParameter("country"));
+        playerEntry.setJersey(Integer.parseInt(request.getParameter("jersey")));
 
         request.setAttribute("playerEntry", playerEntry);
 
@@ -28,3 +30,7 @@ public class PlayerServlet extends HttpServlet {
     }
 
 }
+
+
+
+
