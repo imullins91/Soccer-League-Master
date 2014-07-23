@@ -1,0 +1,10 @@
+Create the database (via the command line):
+
+Create the user:
+createuser -U 'your postgres user-id goes here' player -W
+
+Create the database with that user (no password):
+createdb soccerleaguedb -U 'your postgres user-id goes here' -O player
+
+Connect to the db and run your create table statements:
+psql soccerleaguedb -U player
