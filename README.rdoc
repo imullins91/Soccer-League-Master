@@ -8,3 +8,21 @@ createdb soccerleaguedb -U 'your postgres user-id goes here' -O player
 
 Connect to the db and run your create table statements:
 psql soccerleaguedb -U player
+
+
+ResultSet rs = stmt.executeQuery(sql);
+
+while(rs.next()){
+
+        String firstName= rs.getString("firstName");
+        String lastName= rs.getString("lastName");
+        String position= rs.getString("position");
+        String country= rs.getString("country");
+        int jersey = rs.getInt("jersey");
+
+        out.println("Your name: " + firstName + lastName + "<br>");
+        out.println(", Position: " + position + "<br>");
+        out.println(", Country: " + country + "<br>");
+        out.println(", Jersey No: " + jersey + "<br>");
+        }
+        out.println("</body></html>");
