@@ -29,7 +29,7 @@ public class PlayersRepositoryImpl implements PlayersRepository {
 
     public List<Player> findAllPlayers() {
         final ArrayList<Player> players = new ArrayList<Player>();
-        jdbcTemplate.query("select * from players", new SQLQueryWrapper() {
+        jdbcTemplate.query("select * from 'Players'", new SQLQueryWrapper() {
             public void interpretResults(ResultSet resultSet) throws SQLException {
                 Player player = new Player();
 

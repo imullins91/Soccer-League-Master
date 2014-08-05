@@ -2,6 +2,7 @@
 package com.patmullins.soccerleague.web;
 
 import com.patmullins.soccerleague.domain.Player;
+import com.patmullins.soccerleague.repository.PlayersRepository;
 import com.patmullins.soccerleague.repository.PlayersRepositoryImpl;
 
 import javax.servlet.RequestDispatcher;
@@ -16,6 +17,8 @@ public class PlayerServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        PlayersRepository repository = new PlayersRepositoryImpl();
+
         Player playerEntry = new Player();
         playerEntry.setFirstName(request.getParameter("firstName"));
         playerEntry.setLastName(request.getParameter("lastName"));
@@ -24,6 +27,8 @@ public class PlayerServlet extends HttpServlet {
         playerEntry.setJersey(Integer.parseInt(request.getParameter("jersey")));
 
         request.setAttribute("playerEntry", playerEntry);
+
+        repository.save(playerEntry);
 
         RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
         view.forward(request, response);

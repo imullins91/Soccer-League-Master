@@ -1,7 +1,7 @@
 <%@ page import="com.patmullins.soccerleague.domain.Player" %>
 <jsp:useBean id="player" scope="request" class="com.patmullins.soccerleague.domain.Player"></jsp:useBean>
 
-
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <html>
 <head><LINK REL="stylesheet" HREF="layout.css" TYPE="text/css"></head>
 
@@ -23,6 +23,8 @@
 </table>
 </p>
 
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 
 </html>
