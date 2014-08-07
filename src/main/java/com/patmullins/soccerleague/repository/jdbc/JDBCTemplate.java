@@ -56,6 +56,22 @@ public class JDBCTemplate {
     }
 
     interface DoInTransaction {
-        ResultSet execute(Statement statement) throws SQLException;
+        String sql;
+        sql = "SELECT id, first, last, posisition, country, jersey FROM Players";
+        ReusltSet rs = statement.executeQuery(sql);
+        rs.last();
+        
+        int id = rs.getInt("id");
+        String firstName = rs.getString("first");
+        String lastName = rs.getString("last");
+        String position = rs.getString("position");
+        String country = rs.getString("country");
+        int jersey = rs.getInt("jersey");
+        
+        System.out.print("ID:" + id);
+        System.out.print("ID:" + id);
+        System.out.print("ID:" + id);
+        System.out.print("ID:" + id);
+        //ResultSet execute(Statement statement) throws SQLException;
     }
 }
