@@ -49,13 +49,37 @@ public class JDBCTemplate {
     private Connection getDBConnection() {
         try {
             Class.forName("org.postgresql.Driver");
-            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/soccerleaguedb", "player", "");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:9999/postgres", "postgres", "arsenal");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     interface DoInTransaction {
-        ResultSet execute(Statement statement) throws SQLException;
+        String sql;
+        sql = "SELECT id, first, last, posisition, country, jersey FROM Players";
+        ReusltSet rs = statement.executeQuery(sql);
+        rs.last();
+        
+        int id = rs.getInt("id");
+        String first  = rs.getString("first");
+        String last  = rs.getString("last");
+        String position = rs.getString("position");
+        String country = rs.getString("country");
+        int jersey = rs.getInt("jersey");
+        
+        System.out.print("ID:" + id);
+        System.out.print("Name:" + first + last);
+        System.out.print("Position:" + position);
+        System.out.print("Coutnry:" + country);
+        System.out.print("Jersey:" + jersey);
+
+
+        rs.close();
+        stmt.close();
+        conn.close();
+
+
     }
+    
 }

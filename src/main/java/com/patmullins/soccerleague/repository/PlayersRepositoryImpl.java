@@ -22,14 +22,14 @@ public class PlayersRepositoryImpl implements PlayersRepository {
     public void save(Player player) {
         jdbcTemplate.execute(new SQLStatementWrapper() {
             public void execute(Statement statement) throws SQLException {
-                statement.execute("insert into players (name) values ('foo')");
+                statement.execute("insert into players (FirstName, LastName, Position, Country, Jersey) values ('foo')");
             }
         });
     }
 
     public List<Player> findAllPlayers() {
         final ArrayList<Player> players = new ArrayList<Player>();
-        jdbcTemplate.query("select * from players", new SQLQueryWrapper() {
+        jdbcTemplate.query("select * from 'players'", new SQLQueryWrapper() {
             public void interpretResults(ResultSet resultSet) throws SQLException {
                 Player player = new Player();
 

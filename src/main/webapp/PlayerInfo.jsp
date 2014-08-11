@@ -1,14 +1,11 @@
 <HTML>
 
-<HEAD><LINK REL="stylesheet" HREF="layout.css" TYPE="text/css"></HEAD>
     <TITLE> Des Moines Soccer League </TITLE>
 <BODY>
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <h1>
      Des Moines Soccer League
 </h1>
-<p>
-Please enter your information below
-</p>
 <form method="post" action="/PlayerServlet">
 
     <center>
@@ -20,5 +17,7 @@ Please enter your information below
         <input type="submit" value="Submit">
     </center>
 </form>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </BODY>
-</HTML>
