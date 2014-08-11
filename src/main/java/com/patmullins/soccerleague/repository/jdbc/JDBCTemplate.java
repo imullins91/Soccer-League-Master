@@ -13,23 +13,26 @@ public class JDBCTemplate {
         });
     }
 
+    private Connection getDBConnection() {
+        try {
+            Class.forName("org.postgresql.Driver");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:8888/Players", "postgres", "arsenal");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void query(final String sql, final SQLQueryWrapper wrapper) {
         talkToDatabase(new DoInTransaction() {
             public ResultSet execute(Statement statement) throws SQLException {
                 ResultSet resultSet = statement.executeQuery(sql);
 
-                int id = resultSet.getInt("id");
-                String first  = resultSet.getString("first");
-                String last  = resultSet.getString("last");
+                String firstName  = resultSet.getString("firstName");
+                String lastName  = resultSet.getString("lastName");
                 String position = resultSet.getString("position");
                 String country = resultSet.getString("country");
                 int jersey = resultSet.getInt("jersey");
 
-                System.out.print("ID:" + id);
-                System.out.print("Name:" + first + last);
-                System.out.print("Position:" + position);
-                System.out.print("Country:" + country);
-                System.out.print("Jersey:" + jersey);
 
                 wrapper.interpretResults(resultSet);
                 return resultSet;
@@ -57,15 +60,6 @@ public class JDBCTemplate {
             if (dbConnection != null) {
                 try { dbConnection.close(); } catch (SQLException e) { }
             }
-        }
-    }
-
-    private Connection getDBConnection() {
-        try {
-            Class.forName("org.postgresql.Driver");
-            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/soccerleaguedb", "players", "");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
 
