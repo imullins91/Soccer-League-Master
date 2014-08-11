@@ -19,10 +19,12 @@ public class PlayersRepositoryImpl implements PlayersRepository {
         jdbcTemplate = new JDBCTemplate();
     }
 
-    public void save(Player player) {
+    public void save(final Player player) {
         jdbcTemplate.execute(new SQLStatementWrapper() {
             public void execute(Statement statement) throws SQLException {
-                statement.execute("insert into Players (firstName, lastName, position, country, jersey) values ('firstName', 'lastName','position', 'country', '12')");
+
+
+                    statement.execute("insert into Players (firstName, lastName, position , country, jersey) values ('"+ player.getFirstName() + "', "+ player.getLastName() + ","+ player.getPosition() + ","+ player.getCountry() + ", "+ player.getJersey() + ")");
 
             }
         });
