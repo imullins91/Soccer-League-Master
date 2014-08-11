@@ -22,20 +22,22 @@ public class PlayersRepositoryImpl implements PlayersRepository {
     public void save(Player player) {
         jdbcTemplate.execute(new SQLStatementWrapper() {
             public void execute(Statement statement) throws SQLException {
-                statement.execute("insert into players (first, last, position , country, jersey) values ('firstName','lastName', 'position', 'country', 'jersey')");
+                statement.execute("insert into Players (firstName, lastName, position, country, jersey) values ('firstName', 'lastName','position', 'country', '12')");
+
             }
         });
     }
 
     public List<Player> findAllPlayers() {
-        final ArrayList<Player> players = new ArrayList<Player>();
-        jdbcTemplate.query("select * from players", new SQLQueryWrapper() {
+        final ArrayList<Player> Players = new ArrayList<Player>();
+        jdbcTemplate.query("select * from 'Players'", new SQLQueryWrapper() {
             public void interpretResults(ResultSet resultSet) throws SQLException {
                 Player player = new Player();
-                players.add(player);
+
+                Players.add(player);
             }
         });
 
-        return players;
+        return Players;
     }
 }
