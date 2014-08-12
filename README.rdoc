@@ -9,3 +9,13 @@ createdb soccerleaguedb -U 'your postgres user-id goes here' -O player
 Connect to the db and run your create table statements:
 psql soccerleaguedb -U player
 
+Database Script
+
+CREATE TABLE Players (
+  id serial PRIMARY KEY,
+  firstName varchar,
+  lastName varchar,
+  playerPosition varchar,
+  country varchar,
+  jersey int,
+);
