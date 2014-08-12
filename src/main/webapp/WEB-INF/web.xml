@@ -14,7 +14,14 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
         <servlet-name>PlayerServlet</servlet-name>
         <url-pattern>/PlayerServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>TeamServlet</servlet-name>
+        <servlet-class>com.patmullins.soccerleague.web.TeamServlet</servlet-class>
+    </servlet>
 
-
+    <servlet-mapping>
+        <servlet-name>TeamServlet</servlet-name>
+        <url-pattern>/TeamServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>
