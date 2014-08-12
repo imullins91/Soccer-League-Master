@@ -11,6 +11,7 @@ psql soccerleaguedb -U player
 
 
 Database Script
+
 CREATE TABLE Players (
   id serial PRIMARY KEY,
   firstName varchar,
