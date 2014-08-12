@@ -24,8 +24,7 @@ public class PlayersRepositoryImpl implements PlayersRepository {
             public void execute(Statement statement) throws SQLException {
 
 
-                    statement.execute("insert into Players (firstName, lastName, position , country, jersey) values ('"+ player.getFirstName() + "', "+ player.getLastName() + ","+ player.getPosition() + ","+ player.getCountry() + ", "+ player.getJersey() + ")");
-
+                statement.execute("insert into Players (firstName, lastName, playerPosition , country, jersey) values ('"+ player.getFirstName() + "', '"+ player.getLastName() + "','"+ player.getPosition() + "','"+ player.getCountry() + "', '"+ player.getJersey() + "')");
             }
         });
     }
