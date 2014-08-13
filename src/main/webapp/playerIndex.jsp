@@ -1,30 +1,29 @@
-<%@ page import="com.patmullins.soccerleague.domain.Player" %>
 <jsp:useBean id="player" scope="request" class="com.patmullins.soccerleague.domain.Player"></jsp:useBean>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
 <html>
-<head><LINK REL="stylesheet" HREF="layout.css" TYPE="text/css"></head>
+<head>
+    <LINK REL="stylesheet" HREF="layout.css" TYPE="text/css">
+</head>
 
-<h2>You have successfully completed the registration</h2>
-
+<ul id="nav">
+    <center>
+        <li><a href="HomePage.jsp">Home</a></li>
+        <li><a href="PlayerInfo.jsp">Player Registration</a></li>
+        <li><a href="TeamInfo.jsp">Team Registration</a></li>
+    </center>
+</ul>
 <body>
-<p>
 <%
     com.patmullins.soccerleague.domain.Player playerEntry = (com.patmullins.soccerleague.domain.Player) request.getAttribute("playerEntry");
 %>
-<table class = "center" border = '1' cellpadding = '5' width = "900">
-    <tr>
 
-        <td>Player Name: <%= playerEntry.getFirstName() +" " + playerEntry.getLastName()%></td>
-        <td>Position: <%= playerEntry.getPosition()%></td>
-        <td>Country: <%= playerEntry.getCountry()%></td>
-        <td>Jersey: <%= playerEntry.getJersey()%></td>
-</tr>
-</table>
+<p>Player registration is now completed. Please review your entered information.<br>
+    <br>
+    <b>Player Name:</b> <%= playerEntry.getFirstName() + " " + playerEntry.getLastName()%><br>
+    <b>Position:</b> <%= playerEntry.getPosition()%><br>
+    <b>Country:</b> <%= playerEntry.getCountry()%><br>
+    <b>Jersey:</b> <%= playerEntry.getJersey()%>
 </p>
-
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 </body>
 
 </html>
