@@ -18,7 +18,7 @@ CREATE TABLE Players (
   lastName varchar,
   playerPosition varchar,
   country varchar,
-  jersey int,
+  jersey int
 );
 
 CREATE TABLE Teams
