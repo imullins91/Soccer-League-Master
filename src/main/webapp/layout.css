@@ -31,3 +31,19 @@ td {
 label {
     font-weight:bold;
 }
+li {
+    text-align: center;
+    display: inline;
+}
+#nav {
+    text-align:center;
+}
+#nav li {
+    display:inline;
+    text-align: center;
+}
+#nav a {
+    text-decoration:none;
+    padding:30px;
+    text-align: center;
+}
