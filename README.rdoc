@@ -25,6 +25,6 @@ CREATE TABLE Teams
 (
   id serial PRIMARY KEY,
   teamName varchar,
-  competitionlevel varchar,
-  teamcity varchar
+  competitionLevel varchar,
+  teamCity varchar
 );
