@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <link rel="stylesheet" type="text/css" href="layout.css">
     <title>Des Moines Soccer League</title>
 </head>
 <body>
