@@ -1,28 +1,29 @@
 <%@ page import="com.patmullins.soccerleague.domain.Team" %>
-<%@ page import="com.patmullins.soccerleague.repository.PlayersRepositoryImpl" %>
 <jsp:useBean id="player" scope="request" class="com.patmullins.soccerleague.domain.Team"></jsp:useBean>
 <html>
-<head><LINK REL="stylesheet" HREF="layout.css" TYPE="text/css"></head>
-
-<h2>You have successfully completed the registration</h2>
+<head>
+    <LINK REL="stylesheet" HREF="layout.css" TYPE="text/css">
+</head>
 
 <body>
-<p>
+
+<ul id="nav">
+    <center>
+        <li><a href="HomePage.jsp">Home</a></li>
+        <li><a href="PlayerInfo.jsp">Player Registration</a></li>
+        <li><a href="TeamInfo.jsp">Team Registration</a></li>
+    </center>
+</ul>
 <%
     Team teamEntry = (Team) request.getAttribute("teamEntry");
 %>
-<table class = "center" border = '1' cellpadding = '5' width = "900">
-    <tr>
 
-        <td>Team Name: <%= teamEntry.getTeamName()%></td>
-        <td>Competition Level: <%= teamEntry.getCompetitionLevel()%></td>
-        <td>Team City: <%= teamEntry.getTeamCity()%></td
-
-    </tr>
-</table>
+<p>Team registration is now completed. Please review your entered information.<br>
+<br>
+<b>Team Name:</b> <%= teamEntry.getTeamName()%><br>
+<b>Competition Level:</b> <%= teamEntry.getCompetitionLevel()%><br>
+<b>Team City:</b> <%= teamEntry.getTeamCity()%>
 </p>
 
 </body>
-
 </html>
-
