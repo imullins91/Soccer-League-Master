@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class PlayerServlet extends HttpServlet {
@@ -30,12 +34,26 @@ public class PlayerServlet extends HttpServlet {
 
         repository.save(playerEntry);
 
-        RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp");
+        RequestDispatcher view = getServletContext().getRequestDispatcher("/playerIndex.jsp");
         view.forward(request, response);
 
     }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+        List<Player> players = someDAO.list();
+        request.setAttribute("players", players);
+        } catch (SQLException e) {
+            request.setAttribute("error", "Retrieving rows failed.");
+            e.printStackTrace();
+        }
+        request.getRequestDispatcher("playerIndex.jsp").forward(request, response);
+    }
 
 }
+
+
+
+
 
 
 
