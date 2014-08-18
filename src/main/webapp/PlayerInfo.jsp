@@ -19,7 +19,23 @@
     <center>
         <label for="firstName">First Name:</label><input type="text" id="firstName" name="firstName"/><br>
         <label for="lastName">Last Name:</label><input type="text" id="lastName" name="lastName"/><br>
-        <label for="position">Position:</label><input type="text" id="position" name="position"/><br>
+        <label for="position">Position:</label><select id="position" name="position"/><br>
+        <option></option>
+        <option>GK</option>
+        <option>LB</option>
+        <option>LWB</option>
+        <option>CB</option>
+        <option>RB</option>
+        <option>RWB</option>
+        <option>CDM</option>
+        <option>LM</option>
+        <option>CM</option>
+        <option>RM</option>
+        <option>CAM</option>
+        <option>LW</option>
+        <option>RW</option>
+        <option>CF</option>
+        </select></br>
         <label for="jersey">Jersey No:</label><input type="number" id="jersey" name="jersey" min="0" max="99"/><br>
         <label for="country">Country:</label><select id="country" name="country">
         <option></option>
