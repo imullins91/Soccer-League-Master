@@ -18,18 +18,24 @@
     </center>
 </ul>
 <body>
-<%
-    com.patmullins.soccerleague.domain.Player playerEntry = (com.patmullins.soccerleague.domain.Player) request.getAttribute("playerEntry");
-%>
+<%--<%--%>
+    <%--com.patmullins.soccerleague.domain.Player playerEntry = (com.patmullins.soccerleague.domain.Player) request.getAttribute("playerEntry");--%>
+<%--%>--%>
 
 
-<p>Player registration is now completed. Please review your entered information.<br>
-    <br>
-    <b>Player Name:</b> <%= playerEntry.getFirstName() + " " + playerEntry.getLastName()%><br>
-    <b>Position:</b> <%= playerEntry.getPosition()%><br>
-    <b>Country:</b> <%= playerEntry.getCountry()%><br>
-    <b>Jersey:</b> <%= playerEntry.getJersey()%>
-
+<%--<p>Player registration is now completed. Please review your entered information.<br>--%>
+    <%--<br>--%>
+    <%--<b>Player Name:</b> <%= playerEntry.getFirstName() + " " + playerEntry.getLastName()%><br>--%>
+    <%--<b>Position:</b> <%= playerEntry.getPosition()%><br>--%>
+    <%--<b>Country:</b> <%= playerEntry.getCountry()%><br>--%>
+    <%--<b>Jersey:</b> <%= playerEntry.getJersey()%>--%>
+<c:forEach var="players" items="${players}">
+    <h1>${player.firstName}</h1>
+    <h2>${player.lastName}</h2>
+    <h2>${player.position}</h2>
+    <h2>${player.country}</h2>
+    <h2>${player.jersey}</h2>
+</c:forEach>
 
 
 </body>
