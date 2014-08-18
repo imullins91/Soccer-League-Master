@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class PlayerServlet extends HttpServlet {
@@ -39,4 +40,12 @@ public class PlayerServlet extends HttpServlet {
         view.forward(request, response);
 
     }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PlayersRepositoryImpl repository = new PlayersRepositoryImpl();
+
+        List<Player> players = repository.findAllPlayers();
+        request.setAttribute("players", players);
+        request.getRequestDispatcher("playerIndex.jsp").forward(request, response);
+    }
+
 }
