@@ -18,7 +18,7 @@ public class Team {
             return teamCity;
         }
 
-        public void setTeamCountry(String teamCity) {
+        public void setTeamCity(String teamCity) {
             this.teamCity = teamCity;
         }
 
