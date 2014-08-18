@@ -4,7 +4,7 @@
     <title>Des Moines Soccer League</title>
 </head>
 <body>
-
+</body>
 <h1>
     Des Moines Soccer League
 </h1>
@@ -16,7 +16,6 @@
     </center>
 </ul>
 <hr>
-</body>
 <div class="footer">
     <p>&copy; Mullins 2014</p>
 </div>
