@@ -29,7 +29,7 @@
     <%--<b>Position:</b> <%= playerEntry.getPosition()%><br>--%>
     <%--<b>Country:</b> <%= playerEntry.getCountry()%><br>--%>
     <%--<b>Jersey:</b> <%= playerEntry.getJersey()%>--%>
-<c:forEach var="players" items="${players}">
+<c:forEach var="player" items="${players}">
     <h1>${player.firstName}</h1>
     <h2>${player.lastName}</h2>
     <h2>${player.position}</h2>
