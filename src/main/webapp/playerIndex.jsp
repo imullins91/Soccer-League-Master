@@ -18,22 +18,19 @@
     </center>
 </ul>
 <body>
-<%--<%--%>
-    <%--com.patmullins.soccerleague.domain.Player playerEntry = (com.patmullins.soccerleague.domain.Player) request.getAttribute("playerEntry");--%>
-<%--%>--%>
+<%
+    com.patmullins.soccerleague.domain.Player playerEntry = (com.patmullins.soccerleague.domain.Player) request.getAttribute("playerEntry");
+%>
 
 
-<%--<p>Player registration is now completed. Please review your entered information.<br>--%>
-    <%--<br>--%>
-    <%--<b>Player Name:</b> <%= playerEntry.getFirstName() + " " + playerEntry.getLastName()%><br>--%>
-    <%--<b>Position:</b> <%= playerEntry.getPosition()%><br>--%>
-    <%--<b>Country:</b> <%= playerEntry.getCountry()%><br>--%>
-    <%--<b>Jersey:</b> <%= playerEntry.getJersey()%>--%>
+<p>Player registration is now completed. Please review your entered information.<br>
+    <br>
+    <b>Player Name:</b> <%= playerEntry.getFirstName() + " " + playerEntry.getLastName()%><br>
+    <b>Position:</b> <%= playerEntry.getPosition()%><br>
+    <b>Country:</b> <%= playerEntry.getCountry()%><br>
+    <b>Jersey:</b> <%= playerEntry.getJersey()%>
 
-    <c:forEach var="players" items="${players}">
-        <c:out value="${player.firstName}"/>
-        <c:out value="${player.lastName}"/>
-    </c:forEach>
+
 
 </body>
 
