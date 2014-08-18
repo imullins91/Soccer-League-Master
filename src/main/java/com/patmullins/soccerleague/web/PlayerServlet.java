@@ -4,6 +4,8 @@ package com.patmullins.soccerleague.web;
 import com.patmullins.soccerleague.domain.Player;
 import com.patmullins.soccerleague.repository.PlayersRepository;
 import com.patmullins.soccerleague.repository.PlayersRepositoryImpl;
+import com.patmullins.soccerleague.repository.jdbc.JDBCTemplate;
+import com.patmullins.soccerleague.repository.jdbc.SQLQueryWrapper;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +16,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class PlayerServlet extends HttpServlet {
@@ -38,23 +39,4 @@ public class PlayerServlet extends HttpServlet {
         view.forward(request, response);
 
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-        List<Player> players = someDAO.list();
-        request.setAttribute("players", players);
-        } catch (SQLException e) {
-            request.setAttribute("error", "Retrieving rows failed.");
-            e.printStackTrace();
-        }
-        request.getRequestDispatcher("playerIndex.jsp").forward(request, response);
-    }
-
 }
-
-
-
-
-
-
-
-
