@@ -1,10 +1,5 @@
-<%@ page import="com.patmullins.soccerleague.domain.Player" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Iterator" %>
-<%@ page import="java.awt.print.Book" %>
-<jsp:useBean id="player" scope="request" class="com.patmullins.soccerleague.domain.Player"></jsp:useBean>
-<jsp:useBean id= "players" scope= "request" class= "com.patmullins.soccerleague.repository.PlayersRepositoryImpl"> </jsp:useBean>.
+<jsp:useBean id="player" scope="request" class="com.patmullins.soccerleague.domain.Player"/>
+<jsp:useBean id="players" scope="request" class="com.patmullins.soccerleague.web.PlayerServlet"/>
 <html>
 <head>
     <LINK REL="stylesheet" HREF="layout.css" TYPE="text/css">
