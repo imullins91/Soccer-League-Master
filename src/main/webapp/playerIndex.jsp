@@ -1,5 +1,5 @@
+<jsp:useBean id="players" scope="request" type="java.util.List<com.patmullins.soccerleague.domain.Player>"/>
 <jsp:useBean id="player" scope="request" class="com.patmullins.soccerleague.domain.Player"/>
-<jsp:useBean id="players" scope="request" class="com.patmullins.soccerleague.web.PlayerServlet"/>
 <html>
 <head>
     <LINK REL="stylesheet" HREF="layout.css" TYPE="text/css">
@@ -13,10 +13,8 @@
     </center>
 </ul>
 <body>
-<%--<%--%>
+    <%--<%--%>
     <%--com.patmullins.soccerleague.domain.Player playerEntry = (com.patmullins.soccerleague.domain.Player) request.getAttribute("playerEntry");--%>
-<%--%>--%>
-
 
 <%--<p>Player registration is now completed. Please review your entered information.<br>--%>
     <%--<br>--%>
@@ -31,7 +29,6 @@
     <h2>${player.country}</h2>
     <h2>${player.jersey}</h2>
 </c:forEach>
-
 
 </body>
 
