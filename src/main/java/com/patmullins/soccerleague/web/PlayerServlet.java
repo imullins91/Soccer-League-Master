@@ -41,6 +41,7 @@ public class PlayerServlet extends HttpServlet {
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         PlayersRepositoryImpl repository = new PlayersRepositoryImpl();
 
         List<Player> players = repository.findAllPlayers();
