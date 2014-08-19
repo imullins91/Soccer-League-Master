@@ -16,7 +16,9 @@ public class JDBCTemplate {
     private Connection getDBConnection() {
         try {
             Class.forName("org.postgresql.Driver");
+//            Driver for different machines
             return DriverManager.getConnection("jdbc:postgresql://localhost:8888/Players", "postgres", "arsenal");
+//            return DriverManager.getConnection("jdbc:postgresql://localhost:3693/Players", "postgres", "arsenal");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -25,14 +27,16 @@ public class JDBCTemplate {
     public void query(final String sql, final SQLQueryWrapper wrapper) {
         talkToDatabase(new DoInTransaction() {
             public ResultSet execute(Statement statement) throws SQLException {
-                ResultSet resultSet = statement.executeQuery(sql);
 
+                ResultSet resultSet = statement.executeQuery(sql);
+                while(resultSet.next()){
                 String firstName  = resultSet.getString("firstName");
                 String lastName  = resultSet.getString("lastName");
-                String position = resultSet.getString("position");
+                String position = resultSet.getString("playerPosition");
                 String country = resultSet.getString("country");
                 int jersey = resultSet.getInt("jersey");
 
+                }
 
                 wrapper.interpretResults(resultSet);
                 return resultSet;
