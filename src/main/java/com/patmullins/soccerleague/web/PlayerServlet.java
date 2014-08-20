@@ -15,32 +15,16 @@ import java.util.List;
 
 public class PlayerServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        PlayersRepository repository = new PlayersRepositoryImpl();
-
-        Player playerEntry = new Player();
-        playerEntry.setFirstName(request.getParameter("firstName"));
-        playerEntry.setLastName(request.getParameter("lastName"));
-        playerEntry.setPosition(request.getParameter("position"));
-        playerEntry.setCountry(request.getParameter("country"));
-        playerEntry.setJersey(Integer.parseInt(request.getParameter("jersey")));
-
-        request.setAttribute("playerEntry", playerEntry);
-
-        repository.save(playerEntry);
-
-        RequestDispatcher view = getServletContext().getRequestDispatcher("/playerIndex.jsp");
-        view.forward(request, response);
-
-    }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         PlayersRepositoryImpl repository = new PlayersRepositoryImpl();
 
         List<Player> players = repository.findAllPlayers();
         request.setAttribute("players", players);
-        request.getRequestDispatcher("/playerIndex.jsp").forward(request, response);
+
+        RequestDispatcher view = getServletContext().getRequestDispatcher("/playerIndex.jsp");
+        view.forward(request, response);
+
     }
 
 }
