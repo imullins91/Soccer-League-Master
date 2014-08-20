@@ -1,5 +1,5 @@
-<jsp:useBean id="players" scope="request" type="java.util.List<com.patmullins.soccerleague.domain.Player>"/>
-<jsp:useBean id="player" scope="request" class="com.patmullins.soccerleague.domain.Player"/>
+<%@ page import="java.util.List" %>
+<%@ page import="com.patmullins.soccerleague.domain.Player" %>
 <html>
 <head>
     <LINK REL="stylesheet" HREF="layout.css" TYPE="text/css">
@@ -13,23 +13,16 @@
     </center>
 </ul>
 <body>
-    <%--<%--%>
-    <%--com.patmullins.soccerleague.domain.Player playerEntry = (com.patmullins.soccerleague.domain.Player) request.getAttribute("playerEntry");--%>
-
-<%--<p>Player registration is now completed. Please review your entered information.<br>--%>
-    <%--<br>--%>
-    <%--<b>Player Name:</b> <%= playerEntry.getFirstName() + " " + playerEntry.getLastName()%><br>--%>
-    <%--<b>Position:</b> <%= playerEntry.getPosition()%><br>--%>
-    <%--<b>Country:</b> <%= playerEntry.getCountry()%><br>--%>
-    <%--<b>Jersey:</b> <%= playerEntry.getJersey()%>--%>
-<c:forEach var="player" items="${players}">
-    <h1>${player.firstName}</h1>
-    <h2>${player.lastName}</h2>
-    <h2>${player.position}</h2>
-    <h2>${player.country}</h2>
-    <h2>${player.jersey}</h2>
-</c:forEach>
-
+<%
+    List<Player> players = (List<Player>)request.getAttribute("players");
+%>
+        <% for(Player player : players) { %>
+    <h2><%=player.getFirstName() %></h2>
+    <h2><%=player.getLastName() %></h2>
+    <h2><%=player.getPosition() %></h2>
+    <h2><%=player.getCountry() %></h2>
+    <h2><%=player.getJersey() %></h2>
+<% } %>
 </body>
 
 </html>
